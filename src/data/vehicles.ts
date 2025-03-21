@@ -108,6 +108,47 @@ const vehicles: Vehicle[] = [
     }
   },
   {
+    id: 'minibus-turismo-1',
+    name: 'Minibus Turístico Panorámico',
+    type: 'minibus',
+    capacity: 20,
+    description: 'Diseñado especialmente para excursiones turísticas, este minibus cuenta con ventanas panorámicas para una vista incomparable y sistema de guía turística incorporado para una experiencia completa.',
+    features: [
+      'Ventanas panorámicas extra grandes',
+      'Techo parcialmente acristalado',
+      'Sistema de audio para guía turístico',
+      'Asientos ergonómicos elevados',
+      'Cámara de visión 360° para pasajeros'
+    ],
+    specifications: {
+      model: 'Mercedes-Benz Tourismo',
+      year: 2023,
+      engine: '3.0L BlueTEC Diesel',
+      transmission: 'Automática 8 velocidades',
+      fuel: 'Diesel ECO',
+      consumption: '8.5 km/l'
+    },
+    amenities: [
+      'Wi-Fi de alta velocidad',
+      'Pantallas informativas con GPS',
+      'Refrigerador para bebidas',
+      'Sistema de audio multilenguaje',
+      'Maletero con compartimentos especiales para equipo fotográfico',
+      'Cargadores en cada asiento'
+    ],
+    images: [
+      '/image/f4s958/minibus3.jpg',
+      '/image/f4s958/minibus1.jpg',
+      '/image/f4s958/minibus2.jpg',
+      '/image/f4s958/minibus4.JPG',
+      '/image/f4s958/minibus5.JPG'
+    ],
+    price: {
+      hourly: 75,
+      daily: 520
+    }
+  },
+  {
     id: 'bus-comfort-1',
     name: 'Bus Comfort Turístico',
     type: 'bus',
@@ -276,47 +317,6 @@ const vehicles: Vehicle[] = [
     price: {
       hourly: 40,
       daily: 280
-    }
-  },
-  {
-    id: 'minibus-turismo-1',
-    name: 'Minibus Turístico Panorámico',
-    type: 'minibus',
-    capacity: 20,
-    description: 'Diseñado especialmente para excursiones turísticas, este minibus cuenta con ventanas panorámicas para una vista incomparable y sistema de guía turística incorporado para una experiencia completa.',
-    features: [
-      'Ventanas panorámicas extra grandes',
-      'Techo parcialmente acristalado',
-      'Sistema de audio para guía turístico',
-      'Asientos ergonómicos elevados',
-      'Cámara de visión 360° para pasajeros'
-    ],
-    specifications: {
-      model: 'Mercedes-Benz Tourismo',
-      year: 2023,
-      engine: '3.0L BlueTEC Diesel',
-      transmission: 'Automática 8 velocidades',
-      fuel: 'Diesel ECO',
-      consumption: '8.5 km/l'
-    },
-    amenities: [
-      'Wi-Fi de alta velocidad',
-      'Pantallas informativas con GPS',
-      'Refrigerador para bebidas',
-      'Sistema de audio multilenguaje',
-      'Maletero con compartimentos especiales para equipo fotográfico',
-      'Cargadores en cada asiento'
-    ],
-    images: [
-      '/image/f4s958/minibus3.jpg',
-      '/image/f4s958/minibus1.jpg',
-      '/image/f4s958/minibus2.jpg',
-      '/image/f4s958/minibus4.JPG',
-      '/image/f4s958/minibus5.JPG'
-    ],
-    price: {
-      hourly: 75,
-      daily: 520
     }
   },
   {
