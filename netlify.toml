@@ -1,0 +1,24 @@
+[images]
+  remote_images = [
+    "https://www.cabotcoach.com/product-images/Sprinter_ext-lux-1000x5000px.jpg",
+    "https://klassen.de/media/images/news/original/9e9yr96810q2wg4yw458m3w2456w0030.jpg",
+    "https://grechrv.com/wp-content/uploads/2023/10/lusso-top.png",
+    "https://klassen.de/media/images/news/original/au1eez41gg4714mkl7q5o1p74t3tn5b5.jpg",
+    "https://www.ajlinternational.com/wp-content/uploads/2024/12/6-Mini-Coach-interior-2-scaled.webp",
+    "https://imgcdn.stablediffusionweb.com/2024/3/20/96bc9c49-c262-4886-b0ea-1f689762654b.jpg",
+    "https://i.ytimg.com/vi/lTkz-PCKmgE/hq720.jpg",
+    "https://i.ytimg.com/vi/I2Pik5R7AQg/hq720.jpg",
+    "https://www.topgear.com/sites/default/files/2024/01/VIPClassMercedes-BenzSprinterbyCliveSutton022.jpg",
+    "https://i.ytimg.com/vi/z-7A-oDTN2Q/hq720.jpg",
+    "https://www.grechmotors.com/wp-content/uploads/2024/05/luxury-sprinter-vans-grech-motors-1-scaled.jpg"
+  ]
+
+[build]
+  command = "bun run build"
+  publish = "dist"
+
+# Handle SPA redirects
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
