@@ -21,8 +21,6 @@ export interface Vehicle {
   };
 }
 
-const images = import.meta.glob('../assets/image/**/*.jpg', { eager: true });
-
 const vehicles: Vehicle[] = [
   {
     id: 'van-premium-1',
@@ -98,8 +96,11 @@ const vehicles: Vehicle[] = [
       'Cafetera a bordo'
     ],
     images: [
-      'https://grechrv.com/wp-content/uploads/2023/10/lusso-top.png',
-      'https://klassen.de/media/images/news/original/au1eez41gg4714mkl7q5o1p74t3tn5b5.jpg'
+      '/image/f4d950/950_1.jpg',
+      '/image/f4d950/950_2.jpg',
+      '/image/f4d950/950_3.jpg',
+      '/image/f4d950/950_4.jpg',
+      
     ],
     price: {
       hourly: 65,
@@ -107,11 +108,11 @@ const vehicles: Vehicle[] = [
     }
   },
   {
-    id: 'minibus-comfort-1',
-    name: 'Minibus Comfort Plus',
-    type: 'minibus',
-    capacity: 24,
-    description: 'El Minibus Comfort Plus es perfecto para grupos medianos que necesitan un transporte confortable y seguro. Ideal para excursiones, traslados corporativos o eventos especiales con un grupo de hasta 24 personas.',
+    id: 'bus-comfort-1',
+    name: 'Bus Comfort Turístico',
+    type: 'bus',
+    capacity: 40,
+    description: 'El bus comfort turistico es perfecto para grupos grandes que necesitan un transporte confortable y seguro. Ideal para excursiones, traslados corporativos o eventos especiales con un grupo de hasta 24 personas.',
     features: [
       'Asientos ergonómicos reclinables',
       'Aire acondicionado central potente',
@@ -120,7 +121,7 @@ const vehicles: Vehicle[] = [
       'Maletero amplio'
     ],
     specifications: {
-      model: 'Mercedes-Benz Sprinter Minibus',
+      model: 'Mercedes-Benz Sprinter bus',
       year: 2023,
       engine: '3.0L BlueTEC',
       transmission: 'Automática 7 velocidades',
@@ -136,8 +137,11 @@ const vehicles: Vehicle[] = [
       'Cortinas en ventanas'
     ],
     images: [
-      'https://www.ajlinternational.com/wp-content/uploads/2024/12/6-Mini-Coach-interior-2-scaled.webp',
-      'https://imgcdn.stablediffusionweb.com/2024/3/20/96bc9c49-c262-4886-b0ea-1f689762654b.jpg'
+      '/image/f4a965/965_1.jpg',
+      '/image/f4a965/965_2.jpg',
+      '/image/f4a965/965_3.jpg',
+      '/image/f4a965/IMG_8727.JPG',
+      '/image/f4a965/IMG_8730.JPG'
     ],
     price: {
       hourly: 80,
@@ -219,8 +223,12 @@ const vehicles: Vehicle[] = [
       'Servicio de mayordomo (opcional)'
     ],
     images: [
-      'https://klassen.de/media/images/news/original/au1eez41gg4714mkl7q5o1p74t3tn5b5.jpg',
-      'https://www.topgear.com/sites/default/files/2024/01/VIPClassMercedes-BenzSprinterbyCliveSutton022.jpg'
+      '/image/f4b969/sprinter1.jpg',
+      '/image/f4b969/sprinter2.jpg',
+      '/image/f4b969/sprinter3.JPG',
+      '/image/f4b969/sprinter4.JPG',
+      '/image/f4b969/sprinter5.jpg'
+
     ],
     price: {
       hourly: 90,
@@ -257,7 +265,13 @@ const vehicles: Vehicle[] = [
       'Botellero en cada fila'
     ],
     images: [
-      'https://grechrv.com/wp-content/uploads/2023/10/lusso-top.png'
+      '/image/CFP000/000_3.jpg',
+      '/image/CFP000/000_1.jpg',
+      '/image/CFP000/000_2.jpg',
+      '/image/CFP000/000_4.jpg',
+      '/image/CFP000/000_5.jpg',
+      '/image/CFP000/IMG_8424.JPG',
+      '/image/CFP000/IMG_8431.JPG'
     ],
     price: {
       hourly: 40,
@@ -294,7 +308,11 @@ const vehicles: Vehicle[] = [
       'Cargadores en cada asiento'
     ],
     images: [
-      'https://www.ajlinternational.com/wp-content/uploads/2024/12/6-Mini-Coach-interior-2-scaled.webp'
+      '/image/f4s958/minibus3.jpg',
+      '/image/f4s958/minibus1.jpg',
+      '/image/f4s958/minibus2.jpg',
+      '/image/f4s958/minibus4.JPG',
+      '/image/f4s958/minibus5.JPG'
     ],
     price: {
       hourly: 75,
@@ -333,8 +351,14 @@ const vehicles: Vehicle[] = [
       'Asistente de viaje virtual'
     ],
     images: [
-      'https://i.ytimg.com/vi/z-7A-oDTN2Q/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB0K1cvPcqBdTz93VvfjCgufBk7rw'
-    ],
+      '/image/D4A952/IMG_0870.jpg',
+      '/image/D4A952/IMG_0862.jpg',
+      '/image/D4A952/IMG_0877.jpg',
+      '/image/D4A952/IMG_0882.JPG',
+      '/image/D4A952/IMG_0887.JPG',
+      '/image/D4A952/IMG_0890.JPG',
+      '/image/D4A952/IMG_0895.JPG',
+        ],
     price: {
       hourly: 110,
       daily: 780
