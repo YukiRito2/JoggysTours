@@ -26,7 +26,7 @@ const VehicleFilters = ({
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [selectedCapacity, setSelectedCapacity] = useState<number | null>(null);
   const [priceRange, setPriceRange] = useState<[number, number]>([minPrice, maxPrice]);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   // Vehicle types with icons and labels
   const vehicleTypes = [

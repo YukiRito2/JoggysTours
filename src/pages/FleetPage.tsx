@@ -116,7 +116,7 @@ const FleetPage = () => {
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Filters - Desktop */}
-          <div className="hidden lg:block lg:w-1/4 lg:flex-shrink-0">
+          <div className="hidden lg:block lg:w-1/4 lg:flex-shrink-0 lg:sticky lg:top-24">
             <div className="sticky top-24">
               <VehicleFilters
                 onFilterChange={handleFilterChange}

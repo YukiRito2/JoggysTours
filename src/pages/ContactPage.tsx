@@ -54,36 +54,36 @@ const ContactPage = () => {
     {
       icon: <FaMapMarkerAlt className="text-orange-500 text-xl" />,
       title: 'Dirección',
-      content: '123 Avenida Principal, Ciudad, País',
-      link: 'https://maps.google.com',
+      content: 'Av. San Luis Nro. 2585',
+      link: 'https://maps.app.goo.gl/eb89c5ofyRb8ESzHA',
       linkText: 'Ver en Google Maps'
     },
     {
       icon: <FaPhoneAlt className="text-blue-600 text-xl" />,
       title: 'Teléfono',
-      content: '+1 (234) 567-8901',
-      link: 'tel:+12345678901',
+      content: '999 651 140',
+      link: 'tel:999651140',
       linkText: 'Llamar ahora'
     },
     {
       icon: <FaWhatsapp className="text-orange-500 text-xl" />,
       title: 'WhatsApp',
-      content: '+1 (234) 567-8901',
-      link: 'https://wa.me/12345678901',
+      content: '999 651 140',
+      link: 'https://wa.me/999651140',
       linkText: 'Enviar mensaje'
     },
     {
       icon: <FaEnvelope className="text-blue-600 text-xl" />,
       title: 'Email',
-      content: 'info@joggystours.com',
-      link: 'mailto:info@joggystours.com',
+      content: 'reservas@joggystours.com.pe',
+      link: 'mailto:reservas@joggystours.com.pe',
       linkText: 'Enviar email'
     },
     {
       icon: <FaClock className="text-orange-500 text-xl" />,
       title: 'Horario de atención',
-      content: 'Lunes a Viernes: 8:00 AM - 6:00 PM',
-      secondContent: 'Sábados: 9:00 AM - 1:00 PM'
+      content: 'Lunes a Viernes: 5:00 AM - 12:00 AM',
+      secondContent: 'Sábados: 8:00 AM - 10:00 PM'
     }
   ];
 
