@@ -53,11 +53,11 @@ const Footer = () => {
             <div className="space-y-2">
               <a href="tel:+123456789" className="flex items-center text-silver hover:text-terra-cotta transition duration-300">
                 <FaPhone className="mr-2" />
-                <span>+1 (234) 567-890</span>
+                <span>51999651140</span>
               </a>
-              <a href="mailto:info@joggystours.com" className="flex items-center text-silver hover:text-terra-cotta transition duration-300">
+              <a href="mailto:reservas@joggystours.com.pe" className="flex items-center text-silver hover:text-terra-cotta transition duration-300">
                 <FaEnvelope className="mr-2" />
-                <span>info@joggystours.com</span>
+                <span>reservas@joggystours.com</span>
               </a>
               <div className="flex items-start text-silver">
                 <FaMapMarkerAlt className="mr-2 mt-1 flex-shrink-0" />
@@ -97,7 +97,7 @@ const Footer = () => {
             <a href="#" className="text-silver hover:text-elegant-blue transition duration-300">
               <FaTwitter size={20} />
             </a>
-            <a href="https://wa.me/123456789" className="text-silver hover:text-terra-cotta transition duration-300">
+            <a href="https://wa.me/51999651140" className="text-silver hover:text-terra-cotta transition duration-300">
               <FaWhatsapp size={20} />
             </a>
           </div>

@@ -1,22 +1,32 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaPhone, FaWhatsapp } from 'react-icons/fa';
+import { FaPhone, FaWhatsapp,FaArrowUp } from 'react-icons/fa';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import { IoClose } from 'react-icons/io5';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showScrollToTop, setShowScrollToTop] = useState(false); // Estado para mostrar el botón de scroll hacia arriba
+  const location = useLocation(); // <-- Obtiene la ruta actual
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+      setShowScrollToTop(window.scrollY > 200); // Muestra el botón si el scroll es mayor a 200px
+
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+    // Hace scroll al inicio cuando cambia la ruta
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [location.pathname]); // <-- Ejecuta este efecto cuando cambia la ruta
+  
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -24,6 +34,10 @@ const Header = () => {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Desplazamiento suave hacia arriba
   };
 
   const headerVariants = {
@@ -47,6 +61,7 @@ const Header = () => {
   ];
 
   return (
+    <>
     <motion.header
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled ? 'bg-ivory/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
@@ -82,7 +97,7 @@ const Header = () => {
           {/* Contact & Mobile menu button */}
           <div className="flex items-center space-x-4">
             <a
-              href="tel:+123456789"
+              href="tel:999651140"
               className={`hidden sm:flex items-center space-x-1 ${
                 isScrolled ? 'text-charcoal hover:text-elegant-blue' : 'text-white hover:text-peach'
               }`}
@@ -91,7 +106,7 @@ const Header = () => {
               <span className="text-sm font-medium">Llamar</span>
             </a>
             <a
-              href="https://wa.me/123456789"
+              href="https://wa.me/51999651140"
               target="_blank"
               rel="noopener noreferrer"
               className={`hidden sm:flex items-center space-x-1 ${
@@ -140,7 +155,7 @@ const Header = () => {
             ))}
             <div className="flex space-x-4 py-4">
               <a
-                href="tel:+123456789"
+                href="tel:999651140"
                 className="flex items-center space-x-1 text-charcoal hover:text-elegant-blue"
                 onClick={closeMobileMenu}
               >
@@ -148,7 +163,7 @@ const Header = () => {
                 <span className="text-sm font-medium">Llamar</span>
               </a>
               <a
-                href="https://wa.me/123456789"
+                href="https://wa.me/51999651140"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-1 text-charcoal hover:text-terra-cotta"
@@ -161,7 +176,30 @@ const Header = () => {
           </div>
         </motion.div>
       )}
+      
     </motion.header>
+
+    {/* WhatsApp button */}
+    <a
+      href="https://wa.me/51999651140"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed bottom-20 right-6 p-3 rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-all duration-300 animate-heartbeat"
+      aria-label="WhatsApp"
+    >
+      <FaWhatsapp className="h-5 w-5" />
+    </a>
+       {/* Scroll to top button */}
+    {showScrollToTop && (
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-6 right-6 p-3 rounded-full bg-terra-cotta text-white shadow-lg hover:bg-elegant-blue transition-all duration-300"
+        aria-label="Scroll to top"
+      >
+        <FaArrowUp className="h-5 w-5" />
+      </button>
+    )}
+    </>
   );
 };
 

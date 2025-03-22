@@ -41,7 +41,8 @@ const ServicesPage = () => {
         'Planes personalizados según necesidades de la empresa',
         'Monitoreo GPS en tiempo real'
       ],
-      image: 'https://grechrv.com/wp-content/uploads/2023/10/lusso-top.png'
+      image: '/image/CBR448/IMG_0908.jpg',
+
     },
     {
       id: 'turismo',
@@ -56,7 +57,7 @@ const ServicesPage = () => {
         'Refrigerios y amenidades a bordo',
         'Asistencia 24/7 durante todo el recorrido'
       ],
-      image: 'https://i.ytimg.com/vi/z-7A-oDTN2Q/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB0K1cvPcqBdTz93VvfjCgufBk7rw'
+      image: '/image/f4s958/minibus3.jpg'
     },
     {
       id: 'vip',
@@ -71,7 +72,7 @@ const ServicesPage = () => {
         'Sistemas de entretenimiento individual',
         'Máxima privacidad con cristales polarizados'
       ],
-      image: 'https://klassen.de/media/images/news/original/9e9yr96810q2wg4yw458m3w2456w0030.jpg'
+      image: '/image/f4a965/965_1.jpg'
     },
   ];
 

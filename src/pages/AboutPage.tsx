@@ -65,14 +65,14 @@ const AboutPage = () => {
       name: 'Carlos Rodríguez',
       position: 'Director General',
       bio: 'Fundador de JoggysTours con más de 25 años de experiencia en el sector del transporte turístico y corporativo.',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+      image: '/image/CBR448/IMG_0908.jpg',
+
     },
     {
       name: 'Laura Gómez',
       position: 'Gerente de Operaciones',
       bio: 'Especialista en logística con amplia experiencia en coordinación de flotas y gestión de eventos corporativos.',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80'
-    },
+      image: '/image/f4s958/minibus3.jpg'},
     {
       name: 'Roberto Méndez',
       position: 'Jefe de Flota',

@@ -82,7 +82,7 @@ const ContactPage = () => {
       icon: <FaWhatsapp className="text-orange-500 text-xl" />,
       title: 'WhatsApp',
       content: '999 651 140',
-      link: 'https://wa.me/999651140',
+      link: 'https://wa.me/51999651140',
       linkText: 'Enviar mensaje'
     },
     {

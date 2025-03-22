@@ -21,7 +21,8 @@ import {
   FaSnowflake,
   FaPhoneAlt,
   FaWhatsapp,
-  FaCalendarAlt
+  FaCalendarAlt,
+  FaTimes
 } from 'react-icons/fa';
 
 const VehicleDetailPage = () => {
@@ -30,6 +31,10 @@ const VehicleDetailPage = () => {
   const [vehicle, setVehicle] = useState(vehicles.find(v => v.id === id));
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar el modal
+  const [selectedImage, setSelectedImage] = useState<string | null>(null); // Imagen seleccionada
+
+
 
   // Simulate loading
   useEffect(() => {
@@ -70,19 +75,32 @@ const VehicleDetailPage = () => {
     }
   };
 
+   // Función para abrir el modal
+   const openModal = (image: string) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  // Función para cerrar el modal
+  const closeModal = () => {
+    setSelectedImage(null);
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="bg-ivory py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back button */}
         <div className="mb-6">
-          <Link
-            to="/flota"
-            className="inline-flex items-center text-elegant-blue hover:text-terra-cotta font-medium"
-          >
-            <FaArrowLeft className="mr-2" /> Volver a la flota
-          </Link>
+        <Link
+          to="/flota"
+          className="inline-flex items-center text-elegant-blue hover:text-terra-cotta font-medium py-3 px-4 rounded-lg transition-all duration-200"
+>
+        <FaArrowLeft className="mr-1 " /> {/* Aumenta el tamaño del ícono */}
+        <span className="text-base">Volver a la flota</span> {/* Ajusta el tamaño del texto */}
+        </Link>
         </div>
-
+ 
         {isLoading ? (
           <div className="flex justify-center items-center h-96">
             <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-elegant-blue"></div>
@@ -104,6 +122,7 @@ const VehicleDetailPage = () => {
                   pagination={{ clickable: true }}
                   navigation={true}
                   thumbs={{ swiper: thumbsSwiper }}
+                  loop={true}
                   className="h-80 sm:h-96"
                 >
                   {vehicle.images.map((image, index) => (
@@ -111,7 +130,9 @@ const VehicleDetailPage = () => {
                       <img
                         src={image}
                         alt={`${vehicle.name} - Imagen ${index + 1}`}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover cursor-pointer"
+                        onClick={() => openModal(image)} // Abrir modal al hacer clic
+
                       />
                     </SwiperSlide>
                   ))}
@@ -133,6 +154,7 @@ const VehicleDetailPage = () => {
                             src={image}
                             alt={`Thumbnail ${index + 1}`}
                             className="w-full h-full object-cover"
+                            onClick={() => openModal(image)} // Abrir modal al hacer clic
                           />
                         </SwiperSlide>
                       ))}
@@ -198,7 +220,7 @@ const VehicleDetailPage = () => {
                         Llamar
                       </a>
                       <a
-                        href="https://wa.me/123456789"
+                        href="https://wa.me/51999651140"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-terra-cotta hover:bg-copper text-ivory py-3 px-6 rounded-lg font-medium transition-colors duration-300 flex justify-center items-center"
@@ -212,6 +234,37 @@ const VehicleDetailPage = () => {
               </div>
             </motion.div>
 
+              {/* Modal para mostrar la imagen ampliada */}
+{isModalOpen && selectedImage && (
+  <motion.div
+    className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+    initial={{ opacity: 0 }} // Animación inicial
+    animate={{ opacity: 1 }} // Animación al aparecer
+    exit={{ opacity: 0 }} // Animación al desaparecer
+    onClick={closeModal} // Cierra el modal al hacer clic fuera de la imagen
+  >
+    <motion.div
+      className="relative"
+      initial={{ scale: 0.8 }} // Escala inicial
+      animate={{ scale: 1 }} // Escala al aparecer
+      exit={{ scale: 0.8 }} // Escala al desaparecer
+      transition={{ duration: 0.3, ease: "easeInOut" }} // Duración y tipo de transición
+      onClick={(e) => e.stopPropagation()} // Evita que el clic en la imagen cierre el modal
+    >
+      <button
+        onClick={closeModal}
+        className="absolute top-2 right-2 text-white text-2xl bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75"
+      >
+        <FaTimes />
+      </button>
+      <img
+        src={selectedImage}
+        alt="Imagen ampliada"
+        className="max-w-full max-h-screen rounded-lg"
+      />
+    </motion.div>
+  </motion.div>
+)}
             {/* Features Section */}
             <motion.div
               className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10"
@@ -285,7 +338,7 @@ const VehicleDetailPage = () => {
                     Solicitar cotización
                   </Link>
                   <a
-                    href="tel:+123456789"
+                    href="tel:999651140"
                     className="bg-terra-cotta hover:bg-copper text-ivory py-3 px-8 rounded-lg font-medium transition-colors duration-300 text-center"
                   >
                     <FaPhoneAlt className="inline mr-2" /> Llamar ahora

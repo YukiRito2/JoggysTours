@@ -9,6 +9,7 @@ const FleetPage = () => {
   const [filteredVehicles, setFilteredVehicles] = useState<Vehicle[]>(vehicles);
   const [isLoading, setIsLoading] = useState(true);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [sortCriteria, setSortCriteria] = useState<string>('price_asc'); // Nuevo estado para el criterio de ordenamiento
 
   // Extract min/max values for filter ranges
   const minCapacity = Math.min(...vehicles.map(v => v.capacity));
@@ -32,7 +33,7 @@ const FleetPage = () => {
     minPrice: number | null;
     maxPrice: number | null;
   }) => {
-    const filtered = vehicles.filter(vehicle => {
+    let filtered = vehicles.filter(vehicle => {
       // Filter by type
       if (filters.type.length > 0 && !filters.type.includes(vehicle.type)) {
         return false;
@@ -54,7 +55,32 @@ const FleetPage = () => {
       return true;
     });
 
+    // Apply sorting after filtering
+    filtered = sortVehicles(filtered, sortCriteria);
     setFilteredVehicles(filtered);
+  };
+
+  // Handle sorting
+  const handleSortChange = (criteria: string) => {
+    setSortCriteria(criteria);
+    const sortedVehicles = sortVehicles(filteredVehicles, criteria);
+    setFilteredVehicles(sortedVehicles);
+  };
+
+  // Sorting logic
+  const sortVehicles = (vehicles: Vehicle[], criteria: string): Vehicle[] => {
+    switch (criteria) {
+      case 'price_asc':
+        return [...vehicles].sort((a, b) => a.price.hourly - b.price.hourly);
+      case 'price_desc':
+        return [...vehicles].sort((a, b) => b.price.hourly - a.price.hourly);
+      case 'capacity_asc':
+        return [...vehicles].sort((a, b) => a.capacity - b.capacity);
+      case 'capacity_desc':
+        return [...vehicles].sort((a, b) => b.capacity - a.capacity);
+      default:
+        return vehicles;
+    }
   };
 
   // Animation variants
@@ -178,7 +204,11 @@ const FleetPage = () => {
                   </p>
                   <div className="flex items-center space-x-2">
                     <span className="text-sm text-slate hidden sm:inline">Ordenar por:</span>
-                    <select className="border rounded-md px-2 py-1 text-sm bg-white text-charcoal">
+                    <select
+                      className="border rounded-md px-2 py-1 text-sm bg-white text-charcoal"
+                      value={sortCriteria}
+                      onChange={(e) => handleSortChange(e.target.value)}
+                    >
                       <option value="price_asc">Precio: Menor a mayor</option>
                       <option value="price_desc">Precio: Mayor a menor</option>
                       <option value="capacity_asc">Capacidad: Menor a mayor</option>

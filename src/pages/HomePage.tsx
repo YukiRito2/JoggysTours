@@ -272,7 +272,7 @@ const HomePage = () => {
                 Contactar ahora
               </Link>
               <a
-                href="tel:+123456789"
+                href="tel:999651140"
                 className="bg-terra-cotta hover:bg-copper text-white font-medium py-3 px-8 rounded-lg text-center transition-colors duration-300"
               >
                 <FaPhoneAlt className="inline mr-2" /> Llamar
