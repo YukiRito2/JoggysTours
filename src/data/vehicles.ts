@@ -290,7 +290,7 @@ const vehicles: Vehicle[] = [
       'Portaequipajes superior'
     ],
     specifications: {
-      model: 'Toyota Hiace Premium',
+      model: 'HYUNDAI STARIA 11P',
       year: 2023,
       engine: '2.8L Turbo Diesel',
       transmission: 'Automática 6 velocidades',
@@ -315,8 +315,8 @@ const vehicles: Vehicle[] = [
       '/image/CFP000/IMG_8431.JPG'
     ],
     price: {
-      hourly: 40,
-      daily: 280
+      hourly: 30,
+      daily: 125
     }
   },
   {

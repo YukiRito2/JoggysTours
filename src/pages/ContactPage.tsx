@@ -197,7 +197,7 @@ const ContactPage = () => {
                       className={`w-full px-4 py-3 border rounded-lg ${
                         errors.telefono ? 'border-red-500' : 'border-gray-300'
                       }`}
-                      placeholder="+1 (234) 567-8901"
+                      placeholder="987 651 140"
                       {...register('telefono', { required: true })}
                     />
                     {errors.telefono && (

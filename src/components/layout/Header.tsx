@@ -71,13 +71,27 @@ const Header = () => {
       variants={headerVariants}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4 md:py-6">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <span className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-elegant-blue to-terra-cotta">
-              JOGGYS<span className="text-terra-cotta">TOURS</span>
-            </span>
-          </Link>
+      <div className="flex justify-between items-center h-24">
+  {/* Logo */}
+  <div className="flex items-center justify-start">
+    {/* Logo para vista de escritorio */}
+    <Link to="/" className="hidden md:flex items-center">
+      <div className="logo-container">
+        <img
+          src="/LogoJoggys.png" // Ruta correcta desde la carpeta public
+          alt="Joggys Tours Logo"
+          className="logo h-24 w-auto object-contain" // Clase personalizada para el logo
+        />
+      </div>
+    </Link>
+
+    {/* Logo para vista móvil */}
+    <Link to="/" className="flex md:hidden items-center">
+      <span className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-terra-cotta to-orange-400">
+        JOGGYS<span className="text-orange-500">TOURS</span>
+      </span>
+    </Link>
+</div>
 
           {/* Desktop navigation */}
           <nav className="hidden md:flex space-x-8">

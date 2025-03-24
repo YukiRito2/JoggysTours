@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import ZoomableImage from '../components/ui/ZoomableImage';
 import { Pagination, Navigation, Thumbs } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
@@ -89,14 +90,14 @@ const VehicleDetailPage = () => {
 
   return (
     <div className="bg-ivory py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
         {/* Back button */}
         <div className="mb-6">
         <Link
           to="/flota"
           className="inline-flex items-center text-elegant-blue hover:text-terra-cotta font-medium py-3 px-4 rounded-lg transition-all duration-200"
 >
-        <FaArrowLeft className="mr-1 " /> {/* Aumenta el tamaño del ícono */}
+        <FaArrowLeft className="mr-1" /> {/* Aumenta el tamaño del ícono */}
         <span className="text-base">Volver a la flota</span> {/* Ajusta el tamaño del texto */}
         </Link>
         </div>
@@ -234,7 +235,7 @@ const VehicleDetailPage = () => {
               </div>
             </motion.div>
 
-              {/* Modal para mostrar la imagen ampliada */}
+{/* Modal para mostrar la imagen ampliada */}
 {isModalOpen && selectedImage && (
   <motion.div
     className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
@@ -251,20 +252,9 @@ const VehicleDetailPage = () => {
       transition={{ duration: 0.3, ease: "easeInOut" }} // Duración y tipo de transición
       onClick={(e) => e.stopPropagation()} // Evita que el clic en la imagen cierre el modal
     >
-      <button
-        onClick={closeModal}
-        className="absolute top-2 right-2 text-white text-2xl bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75"
-      >
-        <FaTimes />
-      </button>
-      <img
-        src={selectedImage}
-        alt="Imagen ampliada"
-        className="max-w-full max-h-screen rounded-lg"
-      />
-    </motion.div>
-  </motion.div>
-)}
+       <ZoomableImage src={selectedImage} alt="Imagen ampliada" onClose={closeModal} />    </motion.div>
+      </motion.div>
+      )}
             {/* Features Section */}
             <motion.div
               className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10"

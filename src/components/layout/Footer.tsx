@@ -53,7 +53,7 @@ const Footer = () => {
             <div className="space-y-2">
               <a href="tel:+123456789" className="flex items-center text-silver hover:text-terra-cotta transition duration-300">
                 <FaPhone className="mr-2" />
-                <span>51999651140</span>
+                <span>999 651 140</span>
               </a>
               <a href="mailto:reservas@joggystours.com.pe" className="flex items-center text-silver hover:text-terra-cotta transition duration-300">
                 <FaEnvelope className="mr-2" />
@@ -61,7 +61,7 @@ const Footer = () => {
               </a>
               <div className="flex items-start text-silver">
                 <FaMapMarkerAlt className="mr-2 mt-1 flex-shrink-0" />
-                <span>123 Avenida Principal, Ciudad, Estado, País</span>
+                <span>Av. San Luis Nro. 2585</span>
               </div>
             </div>
           </div>

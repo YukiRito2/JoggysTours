@@ -28,31 +28,31 @@ const AboutPage = () => {
   // Timeline items
   const timelineItems = [
     {
-      year: '2005',
+      year: '2019',
       title: 'Fundación',
       description: 'JoggysTours comienza operaciones con solo 2 vehículos, ofreciendo servicios de traslados turísticos.',
       icon: <FaUsers className="text-terra-cotta" />
     },
     {
-      year: '2010',
+      year: '2022',
       title: 'Expansión',
-      description: 'Ampliamos nuestra flota a 15 vehículos e incorporamos servicios de transporte corporativo para grandes empresas.',
+      description: 'Ampliamos nuestra flota a 8 vehículos e incorporamos servicios de transporte corporativo para grandes empresas.',
       icon: <FaHandshake className="text-elegant-blue" />
     },
     {
-      year: '2015',
+      year: '2023',
       title: 'Innovación',
       description: 'Implementamos tecnología de monitoreo GPS y comenzamos a ofrecer Wi-Fi gratuito en todos nuestros vehículos.',
       icon: <FaShieldAlt className="text-copper" />
     },
     {
-      year: '2020',
+      year: '2023',
       title: 'Sostenibilidad',
       description: 'Iniciamos nuestro programa de reducción de emisiones y comenzamos la transición hacia vehículos más eficientes.',
       icon: <FaTree className="text-elegant-blue" />
     },
     {
-      year: '2023',
+      year: '2025',
       title: 'Excelencia',
       description: 'Recibimos la certificación de calidad ISO 9001 y fuimos premiados como la mejor empresa de transporte turístico de la región.',
       icon: <FaAward className="text-terra-cotta" />
@@ -62,14 +62,14 @@ const AboutPage = () => {
   // Team members
   const teamMembers = [
     {
-      name: 'Carlos Rodríguez',
-      position: 'Director General',
+      name: 'Pastor Hernández',
+      position: 'Gerente General',
       bio: 'Fundador de JoggysTours con más de 25 años de experiencia en el sector del transporte turístico y corporativo.',
       image: '/image/CBR448/IMG_0908.jpg',
 
     },
     {
-      name: 'Laura Gómez',
+      name: 'Justina Rojas',
       position: 'Gerente de Operaciones',
       bio: 'Especialista en logística con amplia experiencia en coordinación de flotas y gestión de eventos corporativos.',
       image: '/image/f4s958/minibus3.jpg'},
@@ -137,10 +137,10 @@ const AboutPage = () => {
           >
             <h2 className="text-3xl font-bold text-charcoal mb-6">Nuestra Historia</h2>
             <p className="text-slate mb-4">
-              JoggysTours nació en 2005 con una visión clara: proporcionar servicios de transporte de la más alta calidad, combinando seguridad, confort y atención personalizada en cada viaje.
+              JoggysTours nació en 2019 con una visión clara: proporcionar servicios de transporte de la más alta calidad, combinando seguridad, confort y atención personalizada en cada viaje.
             </p>
             <p className="text-slate mb-4">
-              Lo que comenzó como una pequeña empresa familiar con solo dos vehículos, ha crecido hasta convertirse en una de las compañías de transporte turístico y corporativo más respetadas de la región, con una flota moderna y diversa de más de 30 vehículos.
+              Lo que comenzó como una pequeña empresa familiar con solo dos vehículos, ha crecido hasta convertirse en una de las compañías de transporte turístico y corporativo más respetadas de la región, con una flota moderna.
             </p>
             <p className="text-slate">
               A lo largo de estos años, hemos transportado a miles de pasajeros satisfechos, desde turistas individuales hasta grandes grupos corporativos, adaptándonos siempre a las necesidades específicas de cada cliente.
@@ -153,7 +153,7 @@ const AboutPage = () => {
             transition={{ duration: 0.7 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              src='/image/C7H969/IMG_0767.jpg'
               alt="Historia de JoggysTours"
               className="w-full h-full object-cover"
             />
@@ -252,7 +252,7 @@ const AboutPage = () => {
         </div>
       </div>
 
-      {/* Team Section */}
+      {/* Team Section
       <div className="bg-elegant-blue/5 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -297,6 +297,7 @@ const AboutPage = () => {
           </motion.div>
         </div>
       </div>
+       */}
 
       {/* Call to Action */}
       <div className="py-20">

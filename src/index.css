@@ -79,3 +79,16 @@ body {
 .animate-heartbeat {
   animation: heartbeat 1.5s infinite;
 }
+
+.logo-container {
+  display: flex; /* Usa flexbox para mejor ajuste */
+  align-items: center; /* Centra la imagen verticalmente */
+  height: auto; /* Permite que el contenedor se ajuste automáticamente */
+  max-height: 120px; /* Evita que el contenedor crezca demasiado */
+}
+
+.logo {
+  height: auto; /* Mantiene la proporción natural */
+  max-height: 100px; /* Ajusta según lo necesario */
+  width: auto; /* Evita distorsión */
+}

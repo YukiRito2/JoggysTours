@@ -67,21 +67,21 @@ const HomePage = () => {
     { icon: <FaShieldAlt className="text-2xl text-copper" />, title: 'Conductores profesionales y certificados' },
     { icon: <FaPhoneAlt className="text-2xl text-sand" />, title: 'Atención 24/7' }
   ];
-
+ 
   // Hero Slides
   const heroSlides = [
     {
-      image: 'https://www.topgear.com/sites/default/files/2024/01/VIPClassMercedes-BenzSprinterbyCliveSutton022.jpg',
+      image: '/image/f4a965/965_1.jpg',
       title: 'Viaja con estilo y comodidad',
       subtitle: 'Descubre nuestra flota de vehículos de lujo para todo tipo de necesidades'
     },
     {
-      image: 'https://www.ajlinternational.com/wp-content/uploads/2024/12/6-Mini-Coach-interior-2-scaled.webp',
+      image: '/image/C7H969/IMG_0767.jpg',
       title: 'El mejor transporte para grupos',
       subtitle: 'Desde pequeños grupos hasta grandes contingentes'
     },
     {
-      image: 'https://i.ytimg.com/vi/z-7A-oDTN2Q/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB0K1cvPcqBdTz93VvfjCgufBk7rw',
+      image: '/image/f4b969/sprinter1.jpg',
       title: 'Servicios turísticos especializados',
       subtitle: 'Conoce los mejores lugares con nuestros servicios de turismo'
     }
