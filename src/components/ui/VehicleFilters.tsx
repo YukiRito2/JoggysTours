@@ -182,7 +182,7 @@ const VehicleFilters = ({
 
         {/* Price Filter */}
         <div>
-          <h4 className="font-medium text-gray-800 mb-3">Precio por Hora</h4>
+          <h4 className="font-medium text-gray-800 mb-3">Precio por 2 Horas</h4>
           <div className="px-2">
             <div className="flex justify-between mb-2">
               <span className="text-sm text-gray-600">${priceRange[0]}</span>

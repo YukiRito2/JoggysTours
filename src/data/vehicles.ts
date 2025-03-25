@@ -9,9 +9,7 @@ export interface Vehicle {
     model: string;
     year: number;
     engine: string;
-    transmission: string;
     fuel: string;
-    consumption: string;
   };
   amenities: string[];
   images: string[];
@@ -24,11 +22,10 @@ export interface Vehicle {
 const vehicles: Vehicle[] = [
   {
     id: 'van-premium-1',
-    name: 'Van Premium Ejecutiva',
+    name: 'HYUNDAI STARIA',
     type: 'van',
-    capacity: 8,
-    description: 'Una van de lujo ideal para grupos pequeños que buscan comodidad y privacidad durante sus viajes corporativos o turísticos. Equipada con asientos de cuero reclinables y amplias ventanas.',
-    features: [
+    capacity: 7,
+      "description": "Una van de lujo ideal para grupos pequeños que buscan comodidad y privacidad durante sus viajes corporativos o turísticos. Equipada con asientos de cuero reclinables y amplias ventanas.",    features: [
       'Asientos de cuero reclinables',
       'Aire acondicionado individual',
       'Sistema de sonido premium',
@@ -38,19 +35,16 @@ const vehicles: Vehicle[] = [
     ],
     specifications: {
       model: 'Mercedes-Benz V-Class',
-      year: 2023,
-      engine: '2.0L Turbo Diesel',
-      transmission: 'Automática 9 velocidades',
+      year: 2022,
+      engine: "2.2L CRDI Turbo Diesel",
       fuel: 'Diesel',
-      consumption: '12 km/l'
     },
     amenities: [
-      'Wi-Fi a bordo',
-      'Cargadores USB en cada asiento',
-      'Nevera pequeña',
-      'Sistema de entretenimiento',
-      'Botella de agua de cortesía',
-      'Privacidad con vidrios polarizados'
+      "Sistema de infoentretenimiento con pantalla táctil",
+      "Conectividad Bluetooth, Apple CarPlay y Android Auto",
+      "Puertos USB para pasajeros",
+      "Asientos configurables",
+      "Sistemas de seguridad avanzados"
     ],
     images: [
       '/image/CBR448/IMG_0908.jpg',
@@ -66,11 +60,11 @@ const vehicles: Vehicle[] = [
   },
   {
     id: 'sprinter-luxury-1',
-    name: 'Sprinter Luxury Class',
+    name: 'MERCERDEZ BENZ SPRINTER',
     type: 'sprinter',
-    capacity: 14,
-    description: 'Nuestra Sprinter Luxury Class ofrece el máximo confort para viajes de negocios o placer. Con amplio espacio interior, asientos ejecutivos y tecnología de vanguardia, garantizamos una experiencia de viaje excepcional.',
-    features: [
+    capacity: 21,
+    description: "Nuestra Sprinter Luxury Class ofrece el máximo confort para viajes de negocios o placer. Con amplio espacio interior, asientos ejecutivos y tecnología de vanguardia, garantizamos una experiencia de viaje excepcional.",
+      features: [
       'Asientos ejecutivos reclinables de cuero',
       'Climatización tri-zona',
       'Techo alto para fácil desplazamiento',
@@ -80,20 +74,16 @@ const vehicles: Vehicle[] = [
     ],
     specifications: {
       model: 'Mercedes-Benz Sprinter',
-      year: 2024,
+      year: 2018,
       engine: '3.0L V6 Diesel',
-      transmission: 'Automática 7G-Tronic',
       fuel: 'Diesel Premium',
-      consumption: '10 km/l'
     },
     amenities: [
-      'Wi-Fi de alta velocidad',
-      'Monitores individuales con entretenimiento',
-      'Nevera con bebidas',
-      'Puertos USB y tomas de corriente AC',
-      'Mesas de trabajo plegables',
-      'Sistema de videoconferencia',
-      'Cafetera a bordo'
+      "Múltiples puertos USB y tomas de corriente AC",
+      "Mesas de trabajo plegables y ajustables",
+      "Sistema de videoconferencia integrado",
+      "Sistema de navegación avanzado",
+      "Sistemas de seguridad avanzados"
     ],
     images: [
       '/image/f4d950/950_1.jpg',
@@ -109,32 +99,30 @@ const vehicles: Vehicle[] = [
   },
   {
     id: 'minibus-turismo-1',
-    name: 'Minibus Turístico Panorámico',
+    name: 'AGRALE MA 10.0',
     type: 'minibus',
-    capacity: 20,
+    capacity: 32,
     description: 'Diseñado especialmente para excursiones turísticas, este minibus cuenta con ventanas panorámicas para una vista incomparable y sistema de guía turística incorporado para una experiencia completa.',
     features: [
-      'Ventanas panorámicas extra grandes',
-      'Techo parcialmente acristalado',
-      'Sistema de audio para guía turístico',
-      'Asientos ergonómicos elevados',
-      'Cámara de visión 360° para pasajeros'
+      "Ventanas panorámicas de gran tamaño con protección UV",
+      "Techo panorámico acristalado",
+      "Sistema de audio profesional para guías turísticos con múltiples micrófonos",
+      "Asientos ergonómicos reclinables con apoyabrazos y reposapiés",
+      "Cámara de visión periférica para maniobras seguras"
     ],
     specifications: {
-      model: 'Mercedes-Benz Tourismo',
-      year: 2023,
-      engine: '3.0L BlueTEC Diesel',
-      transmission: 'Automática 8 velocidades',
-      fuel: 'Diesel ECO',
-      consumption: '8.5 km/l'
+      model: 'Agrale MA 10.0',
+      year: 2016,
+      engine: 'Motor diésel de 4 cilindros turbo',
+      fuel: 'Diesel de bajo azufre',
     },
     amenities: [
-      'Wi-Fi de alta velocidad',
-      'Pantallas informativas con GPS',
-      'Refrigerador para bebidas',
-      'Sistema de audio multilenguaje',
-      'Maletero con compartimentos especiales para equipo fotográfico',
-      'Cargadores en cada asiento'
+    "Pantallas informativas individuales con GPS y contenido turístico",
+    "Refrigerador y máquina de café a bordo",
+    "Sistema de audio multilingüe con auriculares individuales",
+    "Amplio maletero con compartimentos especiales para equipos",
+    "Tomas de corriente y puertos USB en cada asiento",
+    "Sistema de climatización independiente para pasajeros y conductor"
     ],
     images: [
       '/image/f4s958/minibus3.jpg',
@@ -150,32 +138,30 @@ const vehicles: Vehicle[] = [
   },
   {
     id: 'bus-comfort-1',
-    name: 'Bus Comfort Turístico',
+    name: 'Merdeces-Benz O-500',
     type: 'bus',
-    capacity: 40,
-    description: 'El bus comfort turistico es perfecto para grupos grandes que necesitan un transporte confortable y seguro. Ideal para excursiones, traslados corporativos o eventos especiales con un grupo de hasta 24 personas.',
+    capacity: 42,
+    "description": "El autobús turístico Mercedes-Benz O-500 es ideal para grupos grandes que buscan un transporte confortable y seguro. Perfecto para excursiones, traslados corporativos o eventos especiales.",    
     features: [
-      'Asientos ergonómicos reclinables',
-      'Aire acondicionado central potente',
-      'Ventanas panorámicas',
-      'Sistema de audio con micrófono',
-      'Maletero amplio'
+    "Asientos ergonómicos reclinables con cinturones de seguridad",
+    "Sistema de climatización centralizado de alta eficiencia",
+    "Amplias ventanas panorámicas con protección UV",
+    "Sistema de audio profesional con micrófonos para guía y pasajeros",
+    "Espacioso maletero con compartimentos organizados"
     ],
     specifications: {
-      model: 'Mercedes-Benz Sprinter bus',
-      year: 2023,
-      engine: '3.0L BlueTEC',
-      transmission: 'Automática 7 velocidades',
-      fuel: 'Diesel',
-      consumption: '9 km/l'
+      model: 'Mercedes-Benz O-500',
+      year: 2018,
+      engine: "Mercedes-Benz OM 457 LA",
+      fuel: 'Diesel de bajo azufre',
     },
     amenities: [
-      'Wi-Fi gratuito',
-      'Pantallas de TV',
-      'Enchufes USB',
-      'Nevera para bebidas',
-      'Micrófono para guía turístico',
-      'Cortinas en ventanas'
+      "Múltiples pantallas de video con sistema de entretenimiento",
+      "Tomas de corriente y puertos USB en cada fila de asientos",
+      "Refrigerador y dispensador de agua a bordo",
+      "Micrófono dedicado para guía turístico",
+      "Cortinas o persianas en ventanas para control de luz y privacidad",
+      "Sistema de navegación GPS y monitoreo en tiempo real"
     ],
     images: [
       '/image/f4a965/965_1.jpg',
@@ -191,34 +177,30 @@ const vehicles: Vehicle[] = [
   },
   {
     id: 'bus-executive-1',
-    name: 'Bus Ejecutivo Premium',
+    name: 'SCANIA K310S',
     type: 'bus',
-    capacity: 45,
-    description: 'Nuestro Bus Ejecutivo Premium ofrece el máximo confort para grupos grandes. Con capacidad para 45 pasajeros, es perfecto para viajes largos, excursiones turísticas o traslados corporativos donde se requiere espacio y comodidad.',
-    features: [
-      'Asientos reclinables con ajuste lumbar',
-      'Sistema de climatización avanzado',
-      'Ventanas panorámicas con protección UV',
-      'Sistema de entretenimiento centralizado',
-      'Sanitario a bordo',
-      'Bodega espaciosa para equipaje'
+    capacity: 48,
+    "description": "Nuestro Autobús Ejecutivo Premium Scania K310S ofrece el máximo confort para grupos grandes. Perfecto para viajes largos, excursiones turísticas o traslados corporativos, priorizando el espacio y la comodidad.",
+      features: [
+        "Asientos ergonómicos reclinables con soporte lumbar ajustable",
+        "Sistema de climatización multizona de alta eficiencia",
+        "Ventanas panorámicas con protección UV y cortinas de privacidad",
+        "Sistema de entretenimiento centralizado con múltiples pantallas",
+        "Sanitario a bordo con lavamanos",
+        "Amplia bodega para equipaje con iluminación y organización"
     ],
     specifications: {
-      model: 'Volvo 9900',
-      year: 2024,
+      model: 'SCANIA K310S',
+      year: 2014,
       engine: 'Volvo D13 460HP',
-      transmission: 'Automática I-Shift',
-      fuel: 'Diesel Euro 6',
-      consumption: '3.5 km/l'
+      fuel: 'Diesel',
     },
     amenities: [
-      'Wi-Fi de alta velocidad',
-      'Pantallas individuales',
-      'Sistema de audio premium',
-      'Nevera comunitaria',
-      'Máquina de café',
-      'Cargadores en cada asiento',
-      'Iluminación de lectura individual'
+    "Pantallas individuales y centrales de alta resolución",
+    "Sistema de audio premium con sonido envolvente",
+    "Refrigerador y máquina de café a bordo",
+    "Tomas de corriente y puertos USB en cada asiento",
+    "Iluminación de lectura individual y ambiental LED",
     ],
     images: [
       '/image/C7H969/IMG_0767.jpg',
@@ -235,33 +217,30 @@ const vehicles: Vehicle[] = [
   },
   {
     id: 'sprinter-vip-1',
-    name: 'Sprinter VIP First Class',
+    name: 'MERCEDES-BENZ SPRINTER 515CDI',
     type: 'sprinter',
-    capacity: 10,
-    description: 'La Sprinter VIP First Class representa lo último en lujo para transporte terrestre. Con sólo 10 asientos ejecutivos tipo avión, ofrece un espacio incomparable y todas las comodidades para los clientes más exigentes.',
+    capacity: 20,
+    "description": "La Mercedes-Benz Sprinter 515CDI redefine el lujo en transporte terrestre. Con 10 asientos ejecutivos tipo avión, ofrece un espacio excepcional y amenidades de primera para los clientes más exigentes.",
     features: [
-      'Asientos tipo avión completamente reclinables',
-      'Sistema de masaje en asientos',
-      'Separadores de privacidad',
-      'Techo con simulador de cielo estrellado',
-      'Aislamiento acústico premium'
+    "Asientos ejecutivos reclinables de cuero de alta calidad",
+    "Climatización multizona independiente",
+    "Techo elevado para máxima comodidad y movilidad",
+    "Iluminación ambiental LED con control de intensidad y color",
+    "Sistema de sonido premium con múltiples altavoces",
+    "Cortinas de privacidad en ventanas"
     ],
     specifications: {
-      model: 'Mercedes-Benz Sprinter VIP Conversion',
-      year: 2024,
-      engine: '3.0L BlueTEC Turbodiesel',
-      transmission: 'Automática 9G-Tronic',
+      model: 'MERCEDES-BENZ SPRINTER 515CDI',
+      year: 2018,
+      engine:"3.0L V6 Turbo Diesel",      
       fuel: 'Diesel Premium',
-      consumption: '8.5 km/l'
     },
     amenities: [
-      'Wi-Fi de alta velocidad satellite',
-      'Monitores 4K individuales',
-      'Sistema de audio Burmester',
-      'Bar completo con refrigerador',
-      'Mesas de conferencia',
-      'Sistema de climatización individual',
-      'Servicio de mayordomo (opcional)'
+    "Pantallas individuales de entretenimiento para cada pasajero",
+    "Múltiples puertos USB y tomas de corriente AC",
+    "Sistema de audio premium con sonido envolvente",
+    "Sistema de navegación avanzado",
+    "Sistemas de seguridad avanzados"
     ],
     images: [
       '/image/f4b969/sprinter1.jpg',
@@ -278,32 +257,27 @@ const vehicles: Vehicle[] = [
   },
   {
     id: 'van-family-1',
-    name: 'Van Familiar Comfort',
+    name: 'HYUNDAI STARIA 11P',
     type: 'van',
-    capacity: 7,
-    description: 'La opción perfecta para familias o pequeños grupos que buscan comodidad durante sus viajes. Esta van familiar ofrece espacio amplio para todos los pasajeros y su equipaje.',
+    capacity: 11,
+    description: "La opción perfecta para familias o grupos grandes que buscan comodidad durante sus viajes. Esta van familiar ofrece un espacio amplio para todos los pasajeros y su equipaje.",      
     features: [
-      'Asientos reclinables con configuración flexible',
-      'Sistema de aire acondicionado dual',
-      'Puertas corredizas eléctricas',
-      'Sistema de entretenimiento familiar',
-      'Portaequipajes superior'
-    ],
+    "Asientos reclinables con configuración flexible",
+    "Sistema de climatización multizona",
+    "Amplio espacio de carga" 
+      ],
     specifications: {
       model: 'HYUNDAI STARIA 11P',
       year: 2023,
-      engine: '2.8L Turbo Diesel',
-      transmission: 'Automática 6 velocidades',
+      engine: "2.2L CRDI Turbo Diesel",
       fuel: 'Diesel',
-      consumption: '13 km/l'
     },
     amenities: [
-      'Wi-Fi a bordo',
-      'Pantalla para pasajeros',
-      'Puertos USB para todos',
-      'Nevera pequeña',
-      'Asientos para niños (opcional)',
-      'Botellero en cada fila'
+    "Sistema de infoentretenimiento con pantalla táctil",
+    "Conectividad Bluetooth, Apple CarPlay y Android Auto",
+    "Múltiples puertos USB para pasajeros",
+    "Configuración de asientos versátil",
+    "Sistemas de seguridad avanzados"
     ],
     images: [
       '/image/CFP000/000_3.jpg',
@@ -321,34 +295,29 @@ const vehicles: Vehicle[] = [
   },
   {
     id: 'bus-ejecutivo-plus',
-    name: 'Bus Ejecutivo Plus',
+    name: 'YUTONG',
     type: 'bus',
     capacity: 40,
-    description: 'El Bus Ejecutivo Plus ha sido diseñado para viajes largos con el máximo confort. Sus 40 asientos reclinables premium, servicios a bordo y tecnología avanzada garantizan un viaje placentero para grupos grandes.',
-    features: [
-      'Asientos ejecutivos extra anchos',
-      'Espacio entre asientos ampliado',
-      'Sistema de entretenimiento individual',
-      'Sanitarios de lujo',
-      'Cocina equipada',
-      'Zona de descanso para conductor auxiliar'
+    "description": "El Yutong Ejecutivo Plus ha sido diseñado para viajes largos con el máximo confort. Sus 40 asientos reclinables premium, servicios a bordo y tecnología avanzada garantizan un viaje placentero para grupos grandes.",
+      features: [
+        "Asientos ejecutivos ergonómicos extra anchos",
+        "Espacio entre asientos optimizado para mayor comodidad",
+        "Sanitarios de lujo con acabados premium",
+        "Amplio espacio de carga" 
+
     ],
     specifications: {
-      model: 'Volvo 9700 Grand Touring',
-      year: 2024,
+      model: 'YUTONG ZX613',
+      year: 2016,
       engine: 'Volvo D13K 500HP',
-      transmission: 'Automática I-Shift 12 velocidades',
-      fuel: 'Diesel Euro 6',
-      consumption: '3.2 km/l'
+      fuel: 'Diesel',
     },
     amenities: [
-      'Wi-Fi satelital ininterrumpido',
-      'Sistema de entretenimiento 4K',
-      'Servicio de cafetería',
-      'Menú de snacks',
-      'Kit de descanso para viajes nocturnos',
-      'Biblioteca digital',
-      'Asistente de viaje virtual'
+      "Sistema de entretenimiento 4K con contenido multimedia variado",
+      "Servicio de cafetería",
+      "Selección de snacks y comidas",
+      "Kit de descanso premium para viajes nocturnos",
+      "Sistema de asistencia  para información y servicios"
     ],
     images: [
       '/image/D4A952/IMG_0870.jpg',

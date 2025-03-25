@@ -184,7 +184,7 @@ const VehicleDetailPage = () => {
                     <div className="text-right">
                       <p className="text-slate text-sm">Desde</p>
                       <p className="text-3xl font-bold text-terra-cotta">${vehicle.price.hourly}</p>
-                      <p className="text-slate text-sm">por hora</p>
+                      <p className="text-slate text-sm">Precios Desde</p>
                     </div>
                   </div>
 
@@ -195,7 +195,7 @@ const VehicleDetailPage = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <div className="bg-elegant-blue/10 rounded-lg p-4">
-                      <h3 className="font-semibold text-charcoal mb-2">Precio por hora</h3>
+                      <h3 className="font-semibold text-charcoal mb-2">Precios desde</h3>
                       <p className="text-2xl font-bold text-elegant-blue">${vehicle.price.hourly}</p>
                     </div>
                     <div className="bg-peach rounded-lg p-4">
@@ -292,22 +292,16 @@ const VehicleDetailPage = () => {
                     <span className="text-slate">Motor:</span>
                     <span className="font-medium text-charcoal">{vehicle.specifications.engine}</span>
                   </li>
-                  <li className="flex justify-between">
-                    <span className="text-slate">Transmisión:</span>
-                    <span className="font-medium text-charcoal">{vehicle.specifications.transmission}</span>
-                  </li>
+                 
                   <li className="flex justify-between">
                     <span className="text-slate">Combustible:</span>
                     <span className="font-medium text-charcoal">{vehicle.specifications.fuel}</span>
                   </li>
-                  <li className="flex justify-between">
-                    <span className="text-slate">Consumo:</span>
-                    <span className="font-medium text-charcoal">{vehicle.specifications.consumption}</span>
-                  </li>
+                  
                 </ul>
               </div>
             </motion.div>
-
+            
             {/* Call to Action */}
             <motion.div
               className="bg-elegant-blue rounded-xl shadow-lg p-8 text-white"

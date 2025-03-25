@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-  const ZoomableImage = ({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) => {
+const ZoomableImage = ({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) => {
   const [isZoomed, setIsZoomed] = useState(false);
   const [zoomPosition, setZoomPosition] = useState({ x: 0, y: 0 });
   const [isClosing, setIsClosing] = useState(false); // Estado para controlar la animación de cierre
@@ -29,6 +29,19 @@ import { useState } from 'react';
       onClose(); // Llamar a la función de cierre después de la animación
     }, 300); // Duración de la animación (300ms)
   };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown); // Limpia el evento al desmontar el componente
+    };
+  }, []);
 
   return (
     <div
