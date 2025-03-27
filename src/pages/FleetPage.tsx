@@ -9,13 +9,11 @@ const FleetPage = () => {
   const [filteredVehicles, setFilteredVehicles] = useState<Vehicle[]>(vehicles);
   const [isLoading, setIsLoading] = useState(true);
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [sortCriteria, setSortCriteria] = useState<string>('price_asc'); // Nuevo estado para el criterio de ordenamiento
+  const [sortCriteria, setSortCriteria] = useState<string>('capacity_asc'); // Ordenar por capacidad por defecto
 
   // Extract min/max values for filter ranges
   const minCapacity = Math.min(...vehicles.map(v => v.capacity));
   const maxCapacity = Math.max(...vehicles.map(v => v.capacity));
-  const minPrice = Math.min(...vehicles.map(v => v.price.hourly));
-  const maxPrice = Math.max(...vehicles.map(v => v.price.hourly));
 
   // Simulate loading
   useEffect(() => {
@@ -27,35 +25,22 @@ const FleetPage = () => {
   }, []);
 
   // Apply filters to vehicles
-  const handleFilterChange = (filters: {
-    type: string[];
-    capacity: number | null;
-    minPrice: number | null;
-    maxPrice: number | null;
-  }) => {
+  const handleFilterChange = (filters: { type: string[]; capacity: number | null }) => {
     let filtered = vehicles.filter(vehicle => {
-      // Filter by type
+      // Filtrar por tipo de vehículo
       if (filters.type.length > 0 && !filters.type.includes(vehicle.type)) {
         return false;
       }
 
-      // Filter by capacity
+      // Filtrar por capacidad
       if (filters.capacity !== null && vehicle.capacity > filters.capacity) {
-        return false;
-      }
-
-      // Filter by price
-      if (
-        (filters.minPrice !== null && vehicle.price.hourly < filters.minPrice) ||
-        (filters.maxPrice !== null && vehicle.price.hourly > filters.maxPrice)
-      ) {
         return false;
       }
 
       return true;
     });
 
-    // Apply sorting after filtering
+    // Aplicar ordenamiento después de filtrar
     filtered = sortVehicles(filtered, sortCriteria);
     setFilteredVehicles(filtered);
   };
@@ -70,10 +55,6 @@ const FleetPage = () => {
   // Sorting logic
   const sortVehicles = (vehicles: Vehicle[], criteria: string): Vehicle[] => {
     switch (criteria) {
-      case 'price_asc':
-        return [...vehicles].sort((a, b) => a.price.hourly - b.price.hourly);
-      case 'price_desc':
-        return [...vehicles].sort((a, b) => b.price.hourly - a.price.hourly);
       case 'capacity_asc':
         return [...vehicles].sort((a, b) => a.capacity - b.capacity);
       case 'capacity_desc':
@@ -126,19 +107,19 @@ const FleetPage = () => {
     <div className="bg-ivory py-16 sm:py-24">
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          className="text-center mb-12"
-          variants={headerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <h1 className="text-4xl sm:text-5xl font-bold text-charcoal mb-4">
-            Nuestra Flota
-          </h1>
-          <p className="text-lg text-slate max-w-2xl mx-auto">
-            Descubre nuestra amplia selección de vehículos para todo tipo de servicios y necesidades. Calidad, confort y seguridad garantizados.
-          </p>
-        </motion.div>
+      <motion.div
+  className="text-center mb-12 mt-6 sm:mt-0"
+  variants={headerVariants}
+  initial="hidden"
+  animate="visible"
+>
+  <h1 className="text-4xl sm:text-5xl font-bold text-charcoal mb-4">
+    Nuestra Flota
+  </h1>
+  <p className="text-lg text-slate max-w-2xl mx-auto">
+    Descubre nuestra amplia selección de vehículos para todo tipo de servicios y necesidades. Calidad, confort y seguridad garantizados.
+  </p>
+</motion.div>
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Filters - Desktop */}
@@ -148,8 +129,6 @@ const FleetPage = () => {
                 onFilterChange={handleFilterChange}
                 minCapacity={minCapacity}
                 maxCapacity={maxCapacity}
-                minPrice={minPrice}
-                maxPrice={maxPrice}
               />
             </div>
           </div>
@@ -176,8 +155,6 @@ const FleetPage = () => {
                   onFilterChange={handleFilterChange}
                   minCapacity={minCapacity}
                   maxCapacity={maxCapacity}
-                  minPrice={minPrice}
-                  maxPrice={maxPrice}
                 />
               </motion.div>
             )}
@@ -198,24 +175,22 @@ const FleetPage = () => {
               </motion.div>
             ) : (
               <>
-                <div className="bg-white rounded-lg shadow-md p-4 mb-6 flex justify-between items-center">
-                  <p className="text-charcoal">
-                    Mostrando <span className="font-medium">{filteredVehicles.length}</span> vehículos
-                  </p>
-                  <div className="flex items-center space-x-2">
-                    <span className="text-sm text-slate hidden sm:inline">Ordenar por:</span>
-                    <select
-                      className="border rounded-md px-2 py-1 text-sm bg-white text-charcoal"
-                      value={sortCriteria}
-                      onChange={(e) => handleSortChange(e.target.value)}
-                    >
-                      <option value="price_asc">Precio: Menor a mayor</option>
-                      <option value="price_desc">Precio: Mayor a menor</option>
-                      <option value="capacity_asc">Capacidad: Menor a mayor</option>
-                      <option value="capacity_desc">Capacidad: Mayor a menor</option>
-                    </select>
-                  </div>
-                </div>
+               <div className="bg-white rounded-lg shadow-md p-4 mb-6 flex flex-col sm:flex-row sm:justify-between sm:items-center">
+  <p className="text-sm sm:text-base text-charcoal mb-4 sm:mb-0">
+    Mostrando <span className="font-medium">{filteredVehicles.length}</span> vehículos
+  </p>
+  <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2">
+    <span className="text-xs sm:text-sm text-slate hidden sm:inline">Ordenar por:</span>
+    <select
+      className="border rounded-md px-2 py-1 text-xs sm:text-sm bg-white text-charcoal"
+      value={sortCriteria}
+      onChange={(e) => handleSortChange(e.target.value)}
+    >
+      <option value="capacity_asc">Capacidad: Menor a mayor</option>
+      <option value="capacity_desc">Capacidad: Mayor a menor</option>
+    </select>
+  </div>
+</div>
 
                 {filteredVehicles.length > 0 ? (
                   <motion.div
@@ -240,9 +215,7 @@ const FleetPage = () => {
                         // Reset filters by applying empty filters
                         handleFilterChange({
                           type: [],
-                          capacity: null,
-                          minPrice: null,
-                          maxPrice: null
+                          capacity: null
                         });
                       }}
                       className="text-elegant-blue font-medium hover:text-terra-cotta"

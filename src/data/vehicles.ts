@@ -13,10 +13,6 @@ export interface Vehicle {
   };
   amenities: string[];
   images: string[];
-  price: {
-    hourly: number;
-    daily: number;
-  };
 }
 
 const vehicles: Vehicle[] = [
@@ -24,7 +20,7 @@ const vehicles: Vehicle[] = [
     id: 'van-premium-1',
     name: 'HYUNDAI STARIA',
     type: 'van',
-    capacity: 7,
+    capacity: 6,
       "description": "Una van de lujo ideal para grupos pequeños que buscan comodidad y privacidad durante sus viajes corporativos o turísticos. Equipada con asientos de cuero reclinables y amplias ventanas.",    features: [
       'Asientos de cuero reclinables',
       'Aire acondicionado individual',
@@ -47,22 +43,19 @@ const vehicles: Vehicle[] = [
       "Sistemas de seguridad avanzados"
     ],
     images: [
+      '/image/CBR448/IMG_0939.jpg',
       '/image/CBR448/IMG_0908.jpg',
       '/image/CBR448/IMG_0828.JPG',
       '/image/CBR448/IMG_0902.jpg',
       '/image/CBR448/IMG_0918.jpg',
-      '/image/CBR448/IMG_0939.jpg'
+      
     ],
-    price: {
-      hourly: 45,
-      daily: 320
-    }
   },
   {
     id: 'sprinter-luxury-1',
     name: 'MERCERDEZ BENZ SPRINTER',
     type: 'sprinter',
-    capacity: 21,
+    capacity: 15,
     description: "Nuestra Sprinter Luxury Class ofrece el máximo confort para viajes de negocios o placer. Con amplio espacio interior, asientos ejecutivos y tecnología de vanguardia, garantizamos una experiencia de viaje excepcional.",
       features: [
       'Asientos ejecutivos reclinables de cuero',
@@ -92,16 +85,13 @@ const vehicles: Vehicle[] = [
       '/image/f4d950/950_4.jpg',
       
     ],
-    price: {
-      hourly: 65,
-      daily: 480
-    }
+
   },
   {
     id: 'minibus-turismo-1',
     name: 'AGRALE MA 10.0',
     type: 'minibus',
-    capacity: 32,
+    capacity: 30,
     description: 'Diseñado especialmente para excursiones turísticas, este minibus cuenta con ventanas panorámicas para una vista incomparable y sistema de guía turística incorporado para una experiencia completa.',
     features: [
       "Ventanas panorámicas de gran tamaño con protección UV",
@@ -131,16 +121,13 @@ const vehicles: Vehicle[] = [
       '/image/f4s958/minibus4.JPG',
       '/image/f4s958/minibus5.JPG'
     ],
-    price: {
-      hourly: 75,
-      daily: 520
-    }
+
   },
   {
     id: 'bus-comfort-1',
     name: 'Merdeces-Benz O-500',
     type: 'bus',
-    capacity: 42,
+    capacity: 45,
     "description": "El autobús turístico Mercedes-Benz O-500 es ideal para grupos grandes que buscan un transporte confortable y seguro. Perfecto para excursiones, traslados corporativos o eventos especiales.",    
     features: [
     "Asientos ergonómicos reclinables con cinturones de seguridad",
@@ -170,16 +157,13 @@ const vehicles: Vehicle[] = [
       '/image/f4a965/IMG_8727.JPG',
       '/image/f4a965/IMG_8730.JPG'
     ],
-    price: {
-      hourly: 80,
-      daily: 550
-    }
+
   },
   {
     id: 'bus-executive-1',
     name: 'SCANIA K310S',
     type: 'bus',
-    capacity: 48,
+    capacity: 45,
     "description": "Nuestro Autobús Ejecutivo Premium Scania K310S ofrece el máximo confort para grupos grandes. Perfecto para viajes largos, excursiones turísticas o traslados corporativos, priorizando el espacio y la comodidad.",
       features: [
         "Asientos ergonómicos reclinables con soporte lumbar ajustable",
@@ -210,16 +194,48 @@ const vehicles: Vehicle[] = [
       '/image/C7H969/IMG_0776.jpg',
       '/image/C7H969/IMG_0787.jpg'
       ],
-    price: {
-      hourly: 120,
-      daily: 850
-    }
+  },
+  {
+    id: 'sprinter-vip-2',
+    name: 'RENAULT MASTER SPRINTER',
+    type: 'sprinter',
+    capacity: 15,
+    "description": "La RENAULT MASTER Sprinter  redefine el lujo en transporte terrestre. Con 10 asientos ejecutivos tipo avión, ofrece un espacio excepcional y amenidades de primera para los clientes más exigentes.",
+    features: [
+    "Asientos ejecutivos reclinables de cuero de alta calidad",
+    "Climatización multizona independiente",
+    "Techo elevado para máxima comodidad y movilidad",
+    "Iluminación ambiental LED con control de intensidad y color",
+    "Sistema de sonido premium con múltiples altavoces",
+    "Cortinas de privacidad en ventanas"
+    ],
+    specifications: {
+      model: 'RENAULT MASTER',
+      year: 2019,
+      engine:"3.0L V6 Turbo Diesel",      
+      fuel: 'Diesel Premium',
+    },
+    amenities: [
+    "Pantallas individuales de entretenimiento para cada pasajero",
+    "Múltiples puertos USB y tomas de corriente AC",
+    "Sistema de audio premium con sonido envolvente",
+    "Sistema de navegación avanzado",
+    "Sistemas de seguridad avanzados"
+    ],
+    images: [
+      '/image/BJQ270/bjq270(4).jpeg',
+      '/image/BJQ270/bjq270(2).jpeg',
+      '/image/BJQ270/bjq270(3).jpeg',
+      '/image/BJQ270/bjq270(5).jpeg',
+      '/image/BJQ270/bjq270.jpeg'
+    ],
+
   },
   {
     id: 'sprinter-vip-1',
     name: 'MERCEDES-BENZ SPRINTER 515CDI',
     type: 'sprinter',
-    capacity: 20,
+    capacity: 15,
     "description": "La Mercedes-Benz Sprinter 515CDI redefine el lujo en transporte terrestre. Con 10 asientos ejecutivos tipo avión, ofrece un espacio excepcional y amenidades de primera para los clientes más exigentes.",
     features: [
     "Asientos ejecutivos reclinables de cuero de alta calidad",
@@ -250,16 +266,13 @@ const vehicles: Vehicle[] = [
       '/image/f4b969/sprinter5.jpg'
 
     ],
-    price: {
-      hourly: 90,
-      daily: 650
-    }
+
   },
   {
     id: 'van-family-1',
-    name: 'HYUNDAI STARIA 11P',
+    name: 'HYUNDAI STARIA',
     type: 'van',
-    capacity: 11,
+    capacity: 6,
     description: "La opción perfecta para familias o grupos grandes que buscan comodidad durante sus viajes. Esta van familiar ofrece un espacio amplio para todos los pasajeros y su equipaje.",      
     features: [
     "Asientos reclinables con configuración flexible",
@@ -280,24 +293,21 @@ const vehicles: Vehicle[] = [
     "Sistemas de seguridad avanzados"
     ],
     images: [
+      '/image/CFP000/000_4.jpg',
+      '/image/CFP000/000_5.jpg',
       '/image/CFP000/000_3.jpg',
       '/image/CFP000/000_1.jpg',
       '/image/CFP000/000_2.jpg',
-      '/image/CFP000/000_4.jpg',
-      '/image/CFP000/000_5.jpg',
       '/image/CFP000/IMG_8424.JPG',
       '/image/CFP000/IMG_8431.JPG'
     ],
-    price: {
-      hourly: 30,
-      daily: 125
-    }
+
   },
   {
     id: 'bus-ejecutivo-plus',
     name: 'YUTONG',
     type: 'bus',
-    capacity: 40,
+    capacity: 45,
     "description": "El Yutong Ejecutivo Plus ha sido diseñado para viajes largos con el máximo confort. Sus 40 asientos reclinables premium, servicios a bordo y tecnología avanzada garantizan un viaje placentero para grupos grandes.",
       features: [
         "Asientos ejecutivos ergonómicos extra anchos",
@@ -328,10 +338,6 @@ const vehicles: Vehicle[] = [
       '/image/D4A952/IMG_0890.JPG',
       '/image/D4A952/IMG_0895.JPG',
         ],
-    price: {
-      hourly: 110,
-      daily: 780
-    }
   }
 ];
 

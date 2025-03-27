@@ -46,6 +46,7 @@ const VehicleCard = ({ vehicle }: VehicleCardProps) => {
       animate="visible"
       whileHover="hover"
     >
+      {/* Envolver la imagen en un Link para redirigir */}
       <Link to={`/flota/${id}`} className="relative h-60 overflow-hidden block">
         <img
           src={images[0]}
@@ -68,7 +69,7 @@ const VehicleCard = ({ vehicle }: VehicleCardProps) => {
           <span className="mx-2 hidden sm:inline text-silver">•</span>
           <div className="flex items-center">
             <FaCar className="mr-1 text-elegant-blue" />
-            <span className="text-sm line-clamp-1">{vehicle.specifications.model}</span>
+            <span className="text-sm line-clamp-1">{type}</span>
           </div>
         </div>
 

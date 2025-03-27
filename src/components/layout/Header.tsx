@@ -95,55 +95,61 @@ const Header = () => {
 
           {/* Desktop navigation */}
           <nav className="hidden md:flex space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  isScrolled ? 'text-charcoal hover:text-terra-cotta' : 'text-white hover:text-peach'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+  {navigation.map((item) => (
+    <Link
+      key={item.name}
+      to={item.href}
+      className={`text-sm font-medium transition-colors duration-200 ${
+        location.pathname === '/' // Verifica si estás en la HomePage
+          ? isScrolled
+            ? 'text-charcoal hover:text-terra-cotta' // Color para HomePage cuando se hace scroll
+            : 'text-white hover:text-orange-600' // Color para HomePage sin scroll
+          : isScrolled
+          ? 'text-charcoal hover:text-terra-cotta' // Color para otras páginas cuando se hace scroll
+          : 'text-charcoal hover:text-peach' // Color predeterminado para otras páginas
+      }`}
+    >
+      {item.name}
+    </Link>
+  ))}
+</nav>
 
-          {/* Contact & Mobile menu button */}
+          {/* Contact & Mobile menu button */}  
           <div className="flex items-center space-x-4">
-            <a
-              href="tel:999651140"
-              className={`hidden sm:flex items-center space-x-1 ${
-                isScrolled ? 'text-charcoal hover:text-elegant-blue' : 'text-white hover:text-peach'
-              }`}
-            >
-              <FaPhone className="text-sm" />
-              <span className="text-sm font-medium">Llamar</span>
-            </a>
-            <a
-              href="https://wa.me/51999651140"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`hidden sm:flex items-center space-x-1 ${
-                isScrolled ? 'text-charcoal hover:text-terra-cotta' : 'text-white hover:text-peach'
-              }`}
-            >
-              <FaWhatsapp className="text-lg" />
-              <span className="text-sm font-medium">WhatsApp</span>
-            </a>
+  <a
+    href="tel:999651140"
+    className={`hidden sm:flex items-center space-x-1 ${
+      isScrolled ? 'text-charcoal hover:text-elegant-blue' : 'text-charcoal hover:text-peach'
+    }`}
+  >
+    <FaPhone className="text-sm" />
+    <span className="text-sm font-medium">Llamar</span>
+  </a>
+  <a
+    href="https://wa.me/51999651140"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`hidden sm:flex items-center space-x-1 ${
+      isScrolled ? 'text-charcoal hover:text-terra-cotta' : 'text-charcoal hover:text-peach'
+    }`}
+  >
+    <FaWhatsapp className="text-lg" />
+    <span className="text-sm font-medium">WhatsApp</span>
+  </a>
 
-            {/* Mobile menu button */}
-            <button
-              onClick={toggleMobileMenu}
-              className="md:hidden p-2 rounded-md focus:outline-none"
-              aria-expanded={isMobileMenuOpen}
-            >
-              {isMobileMenuOpen ? (
-                <IoClose className={`h-6 w-6 ${isScrolled ? 'text-charcoal' : 'text-white'}`} />
-              ) : (
-                <HiOutlineMenuAlt3 className={`h-6 w-6 ${isScrolled ? 'text-charcoal' : 'text-white'}`} />
-              )}
-            </button>
-          </div>
+  {/* Mobile menu button */}
+  <button
+    onClick={toggleMobileMenu}
+    className="md:hidden p-2 rounded-md focus:outline-none"
+    aria-expanded={isMobileMenuOpen}
+  >
+    {isMobileMenuOpen ? (
+      <IoClose className={`h-6 w-6 ${isScrolled ? 'text-charcoal' : 'text-orange-500'}`} />
+    ) : (
+      <HiOutlineMenuAlt3 className={`h-6 w-6 ${isScrolled ? 'text-charcoal' : 'text-orange-500'}`} />
+    )}
+  </button>
+</div>
         </div>
       </div>
 
@@ -198,7 +204,7 @@ const Header = () => {
       href="https://wa.me/51999651140"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-20 right-6 p-3 rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-all duration-300 animate-heartbeat"
+      className="fixed bottom-20 right-6 p-3 rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-all duration-300 animate-heartbeat z-50"
       aria-label="WhatsApp"
     >
       <FaWhatsapp className="h-5 w-5" />
@@ -207,7 +213,7 @@ const Header = () => {
     {showScrollToTop && (
       <button
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 p-3 rounded-full bg-terra-cotta text-white shadow-lg hover:bg-elegant-blue transition-all duration-300"
+        className="fixed bottom-6 right-6 p-3 rounded-full bg-terra-cotta text-white shadow-lg hover:bg-elegant-blue transition-all duration-300 z-50"
         aria-label="Scroll to top"
       >
         <FaArrowUp className="h-5 w-5" />

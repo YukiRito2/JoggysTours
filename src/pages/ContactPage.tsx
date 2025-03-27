@@ -101,7 +101,7 @@ const ContactPage = () => {
   ];
 
   return (
-    <div className="bg-gray-50 py-16">
+    <div className="bg-gray-50 py-16  mt-7 sm:mt-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"

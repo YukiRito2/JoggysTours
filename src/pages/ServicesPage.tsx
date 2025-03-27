@@ -101,7 +101,7 @@ const ServicesPage = () => {
   return (
     <div className="bg-gray-50 pt-16 pb-24">
       {/* Hero Section */}
-      <div className="bg-elegant-blue py-16 mb-16">
+      <div className="bg-elegant-blue py-16 mb-16  mt-7 sm:mt-9 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <motion.h1

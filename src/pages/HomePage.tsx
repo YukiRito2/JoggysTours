@@ -91,71 +91,80 @@ const HomePage = () => {
     <div className="pb-16">
       {/* Hero Section */}
       <section className="relative h-screen">
-        <Swiper
-          modules={[Autoplay, Pagination, Navigation, EffectFade]}
-          effect="fade"
-          slidesPerView={1}
-          loop={true}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          className="h-full"
-        >
-          {heroSlides.map((slide, index) => (
-            <SwiperSlide key={index}>
-              <div
-                className="relative w-full h-full bg-cover bg-center flex items-center"
-                style={{ backgroundImage: `url(${slide.image})` }}
+      <Swiper
+  modules={[Autoplay, Pagination, Navigation, EffectFade]}
+  effect="fade"
+  slidesPerView={1}
+  loop={true}
+  autoplay={{
+    delay: 5000,
+    disableOnInteraction: false,
+  }}
+  pagination={{
+    clickable: true,
+  }}
+  navigation={true}
+  className="h-full"
+>
+  {heroSlides.map((slide, index) => (
+    <SwiperSlide key={index}>
+      <div
+        className="relative w-full h-full bg-cover bg-center flex items-center"
+        style={{ backgroundImage: `url(${slide.image})` }}
+      >
+        <div className="absolute inset-0 bg-charcoal bg-opacity-50" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+          <div className="text-center sm:text-left max-w-xl">
+            <motion.h1
+              className="text-4xl sm:text-5xl md:text-6xl font-bold text-ivory leading-tight mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              {slide.title}
+            </motion.h1>
+            <motion.p
+              className="text-xl text-peach mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              {slide.subtitle}
+            </motion.p>
+            <motion.div
+              className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <Link
+                to="/flota"
+                className="bg-elegant-blue hover:bg-elegant-blue/90 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300"
               >
-                <div className="absolute inset-0 bg-charcoal bg-opacity-50" />
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-                  <div className="text-center sm:text-left max-w-xl">
-                    <motion.h1
-                      className="text-4xl sm:text-5xl md:text-6xl font-bold text-ivory leading-tight mb-4"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
-                    >
-                      {slide.title}
-                    </motion.h1>
-                    <motion.p
-                      className="text-xl text-peach mb-8"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.4 }}
-                    >
-                      {slide.subtitle}
-                    </motion.p>
-                    <motion.div
-                      className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.6 }}
-                    >
-                      <Link
-                        to="/flota"
-                        className="bg-elegant-blue hover:bg-elegant-blue/90 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300"
-                      >
-                        Ver nuestra flota
-                      </Link>
-                      <Link
-                        to="/contacto"
-                        className="bg-terra-cotta hover:bg-copper text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300"
-                      >
-                        Solicitar cotización
-                      </Link>
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                Ver nuestra flota
+              </Link>
+              <Link
+                to="/contacto"
+                className="bg-terra-cotta hover:bg-copper text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300"
+              >
+                Solicitar cotización
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </SwiperSlide>
+  ))}
+  {/* Ocultar botones de navegación en móviles */}
+  <style>
+    {`
+      .swiper-button-next,
+      .swiper-button-prev {
+        @apply hidden sm:block;
+      }
+    `}
+  </style>
+</Swiper>
 
         {/* Features Highlight */}
         <div className="absolute bottom-0 left-0 right-0 bg-ivory py-4 shadow-lg transform translate-y-1/2 z-10">

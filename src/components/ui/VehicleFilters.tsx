@@ -6,26 +6,20 @@ interface VehicleFiltersProps {
   onFilterChange: (filters: {
     type: string[];
     capacity: number | null;
-    minPrice: number | null;
-    maxPrice: number | null;
   }) => void;
   minCapacity: number;
   maxCapacity: number;
-  minPrice: number;
-  maxPrice: number;
+
 }
 
 const VehicleFilters = ({
   onFilterChange,
   minCapacity,
   maxCapacity,
-  minPrice,
-  maxPrice
 }: VehicleFiltersProps) => {
   // State for filters
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [selectedCapacity, setSelectedCapacity] = useState<number | null>(null);
-  const [priceRange, setPriceRange] = useState<[number, number]>([minPrice, maxPrice]);
   const [isOpen, setIsOpen] = useState(true);
 
   // Vehicle types with icons and labels
@@ -38,9 +32,10 @@ const VehicleFilters = ({
 
   // Capacity options
   const capacityOptions = [
-    { value: 8, label: '1-8 pasajeros' },
+    { value: 7, label: '1-8 pasajeros' },
     { value: 15, label: '1-15 pasajeros' },
-    { value: 25, label: '1-25 pasajeros' },
+    { value: 30, label: '1-30 pasajeros' },
+    { value: 46, label: '1-46 pasajeros' },
     { value: null, label: 'Cualquier capacidad' }
   ];
 
@@ -49,13 +44,11 @@ const VehicleFilters = ({
     const filters = {
       type: selectedTypes,
       capacity: selectedCapacity,
-      minPrice: priceRange[0],
-      maxPrice: priceRange[1]
     };
 
     onFilterChange(filters);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedTypes, selectedCapacity, priceRange]);
+  }, [selectedTypes, selectedCapacity]);
 
   // Toggle vehicle type filter
   const toggleTypeFilter = (type: string) => {
@@ -71,27 +64,10 @@ const VehicleFilters = ({
     setSelectedCapacity(capacity);
   };
 
-  // Handle price range change
-  const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
-    const newValue = parseInt(e.target.value);
-    const newPriceRange = [...priceRange] as [number, number];
-    newPriceRange[index] = newValue;
-
-    // Ensure min <= max
-    if (index === 0 && newValue > priceRange[1]) {
-      newPriceRange[1] = newValue;
-    } else if (index === 1 && newValue < priceRange[0]) {
-      newPriceRange[0] = newValue;
-    }
-
-    setPriceRange(newPriceRange);
-  };
-
   // Clear all filters
   const clearFilters = () => {
     setSelectedTypes([]);
     setSelectedCapacity(null);
-    setPriceRange([minPrice, maxPrice]);
   };
 
   // Animation variants
@@ -177,59 +153,6 @@ const VehicleFilters = ({
                 {option.label}
               </button>
             ))}
-          </div>
-        </div>
-
-        {/* Price Filter */}
-        <div>
-          <h4 className="font-medium text-gray-800 mb-3">Precio por 2 Horas</h4>
-          <div className="px-2">
-            <div className="flex justify-between mb-2">
-              <span className="text-sm text-gray-600">${priceRange[0]}</span>
-              <span className="text-sm text-gray-600">${priceRange[1]}</span>
-            </div>
-            <div className="mb-4">
-              <input
-                type="range"
-                min={minPrice}
-                max={maxPrice}
-                value={priceRange[0]}
-                onChange={(e) => handlePriceChange(e, 0)}
-                className="w-full accent-orange-500"
-              />
-              <input
-                type="range"
-                min={minPrice}
-                max={maxPrice}
-                value={priceRange[1]}
-                onChange={(e) => handlePriceChange(e, 1)}
-                className="w-full accent-elegant-blue"
-              />
-            </div>
-            <div className="flex justify-between">
-              <div className="w-1/2 pr-2">
-                <label className="text-xs text-gray-500">Mínimo</label>
-                <input
-                  type="number"
-                  min={minPrice}
-                  max={priceRange[1]}
-                  value={priceRange[0]}
-                  onChange={(e) => handlePriceChange(e, 0)}
-                  className="w-full p-2 text-sm border rounded-md"
-                />
-              </div>
-              <div className="w-1/2 pl-2">
-                <label className="text-xs text-gray-500">Máximo</label>
-                <input
-                  type="number"
-                  min={priceRange[0]}
-                  max={maxPrice}
-                  value={priceRange[1]}
-                  onChange={(e) => handlePriceChange(e, 1)}
-                  className="w-full p-2 text-sm border rounded-md"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </motion.div>

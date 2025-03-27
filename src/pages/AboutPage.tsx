@@ -103,29 +103,29 @@ const AboutPage = () => {
   return (
     <div className="bg-ivory py-16">
       {/* Hero Section */}
-      <div className="bg-elegant-blue py-16 mb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <motion.h1
-              className="text-4xl sm:text-5xl font-bold text-ivory mb-6"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              Sobre Nosotros
-            </motion.h1>
-            <motion.p
-              className="text-xl text-peach max-w-3xl mx-auto"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              Conoce la historia, valores y el equipo detrás de JoggysTours,
-              tu socio de confianza en servicios de transporte de calidad.
-            </motion.p>
-          </div>
-        </div>
-      </div>
+<div className="bg-elegant-blue py-16 mb-16 mt-7 sm:mt-8">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
+    <div className="text-center">
+      <motion.h1
+        className="text-4xl sm:text-5xl font-bold text-ivory mb-6"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Sobre Nosotros
+      </motion.h1>
+      <motion.p
+        className="text-xl text-peach max-w-3xl mx-auto"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        Conoce la historia, valores y el equipo detrás de JoggysTours,
+        tu socio de confianza en servicios de transporte de calidad.
+      </motion.p>
+    </div>
+  </div>
+</div>
 
       {/* About Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
@@ -162,56 +162,56 @@ const AboutPage = () => {
       </div>
 
       {/* Timeline Section */}
-      <div className="bg-white py-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<div className="bg-white py-20">
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      className="text-center mb-16"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h2 className="text-3xl font-bold text-charcoal mb-4">Nuestra Trayectoria</h2>
+      <p className="text-slate max-w-2xl mx-auto">
+        Desde nuestros humildes comienzos hasta convertirnos en líderes del sector,
+        cada etapa de nuestro camino ha estado marcada por la pasión y el compromiso.
+      </p>
+    </motion.div>
+
+    <div className="relative">
+      {/* Vertical line */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-elegant-blue/20 hidden sm:block"></div>
+
+      {/* Timeline items */}
+      <div className="space-y-12">
+        {timelineItems.map((item, index) => (
           <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            key={index}
+            className={`flex flex-col sm:flex-row items-center ${index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'}`}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <h2 className="text-3xl font-bold text-charcoal mb-4">Nuestra Trayectoria</h2>
-            <p className="text-slate max-w-2xl mx-auto">
-              Desde nuestros humildes comienzos hasta convertirnos en líderes del sector,
-              cada etapa de nuestro camino ha estado marcada por la pasión y el compromiso.
-            </p>
-          </motion.div>
-
-          <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-elegant-blue/20"></div>
-
-            {/* Timeline items */}
-            <div className="space-y-12">
-              {timelineItems.map((item, index) => (
-                <motion.div
-                  key={index}
-                  className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12'}`}>
-                    <div className="bg-peach/50 p-6 rounded-lg shadow-md">
-                      <h3 className="font-semibold text-xl text-terra-cotta">{item.title}</h3>
-                      <p className="text-slate mt-2">{item.description}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-center z-10">
-                    <div className="bg-white rounded-full p-2 shadow-md">
-                      <div className="bg-elegant-blue rounded-full w-10 h-10 flex items-center justify-center">
-                        <span className="text-white font-bold text-sm">{item.year}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-1/2"></div>
-                </motion.div>
-              ))}
+            <div className={`w-full sm:w-1/2 ${index % 2 === 0 ? 'sm:pr-12 sm:text-right' : 'sm:pl-12'}`}>
+              <div className="bg-peach/50 p-6 rounded-lg shadow-md">
+                <h3 className="font-semibold text-xl text-terra-cotta">{item.title}</h3>
+                <p className="text-slate mt-2">{item.description}</p>
+              </div>
             </div>
-          </div>
-        </div>
+            <div className="flex items-center justify-center z-10 my-6 sm:my-0">
+              <div className="bg-white rounded-full p-2 shadow-md">
+                <div className="bg-elegant-blue rounded-full w-10 h-10 flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">{item.year}</span>
+                </div>
+              </div>
+            </div>
+            <div className="w-full sm:w-1/2"></div>
+          </motion.div>
+        ))}
       </div>
+    </div>
+  </div>
+</div>
 
       {/* Values Section */}
       <div className="py-20">
